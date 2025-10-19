@@ -20,6 +20,21 @@ app.get('/tico', (req, res) => {
   res.type('html').send(html('KKKKK', 'teco'));
 });
 
+app.get('/pokemons', (req, res) => {
+  res.json([
+    { "id": 1, "nome": "Caterpie" },
+    { "id": 2, "nome": "Pidgeotto" },
+    { "id": 3, "nome": "Bulbasaur" },
+    { "id": 4, "nome": "Charmander" },
+    { "id": 5, "nome": "Squirtle" },
+    { "id": 6, "nome": "Krabby" },
+    { "id": 7, "nome": "Primeape" },
+    { "id": 8, "nome": "Muk" },
+    { "id": 9, "nome": "Tauros" },
+    { "id": 10, "nome": "Kingler" }
+  ]);
+});
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 function html(title, text) {
