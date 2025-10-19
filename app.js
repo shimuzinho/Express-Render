@@ -3,13 +3,13 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(express.json())
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => res.type('html').send(html('Hello from Render!', 'Hello Express API')));
 
 app.get('/req', (req, res) => {
-    console.log("Just got a request!")
-    res.send('Yo!')
+  console.log("Just got a request!")
+  res.send('Yo!')
 })
 
 app.get('/meunome', (req, res) => {
@@ -32,6 +32,32 @@ app.get('/pokemons', (req, res) => {
     { "id": 8, "nome": "Muk" },
     { "id": 9, "nome": "Tauros" },
     { "id": 10, "nome": "Kingler" }
+  ]);
+});
+
+app.post('/series', (req, res) => {
+  res.json([
+    {
+      "titulo": "The Good Place",
+      "ano_inicio": 2016,
+      "genero": ["Comédia", "Ficção científica", "Filosofia"],
+      "criador": "Michael Schur",
+      "sinopse": "Eleanor morre e vai parar em um lugar chamado 'O Bom Lugar', mas logo percebe que há algo errado e tenta se tornar uma pessoa melhor para merecer ficar lá."
+    },
+    {
+      "titulo": "The Blacklist",
+      "ano_inicio": 2013,
+      "genero": ["Suspense", "Crime", "Ação"],
+      "criador": "Jon Bokenkamp",
+      "sinopse": "Raymond 'Red' Reddington, um ex-agente do governo e criminoso procurado, se entrega ao FBI e oferece ajuda para capturar outros criminosos em troca de imunidade."
+    },
+    {
+      "titulo": "Lucifer",
+      "ano_inicio": 2016,
+      "genero": ["Drama", "Fantasia", "Policial"],
+      "criador": "Tom Kapinos",
+      "sinopse": "Entediado no inferno, Lúcifer Morningstar decide viver em Los Angeles, onde ajuda a polícia a resolver crimes enquanto enfrenta dilemas sobre moralidade e redenção."
+    }
   ]);
 });
 
