@@ -16,6 +16,10 @@ app.get('/meunome', (req, res) => {
   res.type('html').send(html('Meu Nome', 'Meu nome é Pedro Rossini Lanutti de Moraes'));
 });
 
+app.get('/tico', (req, res) => {
+  res.type('html').send(html('KKKKK', 'teco'));
+});
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 function html(title, text) {
